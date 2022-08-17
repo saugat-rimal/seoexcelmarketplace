@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap');
+
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+
+:root {
+    
+    /* colors */
+    --clr-dark: 227, 100%, 9%;
+    --clr-grey: 0, 0%, 47%;
+    --clr-white: 0 0% 100%;
+    --heading: rgb(0 10 45);
+    --para: #777777;
+    --para-tint: #e4e4e4;
+    --third: #fff;
+    --helper: #8490ff;
+    --helper-tint: #f3f4ff;
+    --bg: rgb(249 249 255);
+    --gradient: linear-gradient(0deg, rgb(132 144 255) 0%, rgb(98 189 252) 100%);
+    --shadow: 0px 0px 20px 0px rgb(132 144 255 / 20%);
+    
+    /* font-sizes */
+    --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
+    --fs-800: 3.5rem;
+    --fs-700: 1.5rem;
+    --fs-600: 1rem;
+    --fs-500: 1rem;
+    --fs-400: 0.9375rem;
+    --fs-300: 1rem;
+    --fs-200: 0.875rem;
+    
+    /* font-families */
+    --ff-work-sans:  'Work Sans', sans-serif;
+    --ff-pop-sans:  'Poppins', sans-serif;
+}
+
+@media (min-width: 35em) {
+    :root {
+        --fs-800: 5rem;
+        --fs-700: 3.5rem;
+        --fs-600: 1.5rem;
+        --fs-500: 1.2rem;
+        --fs-400: 1rem;
+    }
+}
+
+@media (min-width: 45em) {
+    :root {
+        /* font-sizes */
+        --fs-800: 6.25rem;
+        --fs-700: 3.5rem;
+        --fs-600: 2rem;
+        --fs-500: 1.1rem;
+        --fs-400: 1.125rem;
+    }
+}
+
+
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+    margin: 0; 
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: 400;
+}
+
+/* set up the body */
+body {
+    font-family: var(--ff-work-sans);
+    font-size: var(--fs-400);
+    color: hsl( var(--clr-dark) );
+    background-color: hsl( var(--clr-white) );
+    line-height: 1.5;
+    min-height: 100vh;
+    
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    
+    overflow-x: hidden;
+}
+
+/* make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+
+/* general */
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+
+.grid {
+    display: grid;
+    gap: var(--gap, 1rem);
+}
+
+.d-block {
+    display: block;
+}
+
+.sr-only {
+  position: absolute; 
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px; 
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+section{
+ padding: 9rem 0px;
+}
+
+/* colors */
+
+.bg-dark { background-color: hsl( var(--clr-dark) );}
+.bg-white { background-color: hsl( var(--clr-white) );}
+
+.text-dark { color: hsl( var(--clr-dark) );}
+.text-grey { color: hsl( var(--clr-grey) );}
+.text-white { color: hsl( var(--clr-white) );}
+
+/* typography */
+
+.ff-pop {font-family: var(--ff-pop-sans);}
+.ff-work {font-family: var(--ff-work-sans);}
+
+.letter-spacing-1 { letter-spacing: 4.75px; } 
+.letter-spacing-2 { letter-spacing: 2.7px; } 
+.letter-spacing-3 { letter-spacing: 2.35px; } 
+
+.uppercase { text-transform: uppercase; }
+
+.fs-900 { font-size: var(--fs-900); }
+.fs-800 { font-size: var(--fs-800); }
+.fs-700 { font-size: var(--fs-700); }
+.fs-600 { font-size: var(--fs-600); }
+.fs-500 { font-size: var(--fs-500); }
+.fs-400 { font-size: var(--fs-400); }
+.fs-300 { font-size: var(--fs-300); }
+.fs-200 { font-size: var(--fs-200); }
+.fw-700{font-weight: 700;}
+.fw-600{font-weight: 600;}
+.fw-500{font-weight: 500;}
+
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+    line-height: 1.1;
+}
+
+/* ------------------- */
+/* Compontents         */
+/* ------------------- */
+
+
+.seeDomain-btn { 
+	background: -webkit-linear-gradient(0deg, #8490ff 0%, #62bdfc 100%);
+	color: #ffffff;
+	cursor: pointer;
+	display: inline-block;
+	font-family: "Work Sans", sans-serif;
+	font-weight: 500;
+	padding: 1rem 2.2rem;
+	transition: all 0.3s ease 0s;
+    border: none;  
+    max-width: 200px;  
+}
+
+.seeDomain-btn:hover { 
+	box-shadow: rgba(132, 144, 255, 0.3) 0px 20px 20px 0px;
+	color: #ffffff;
+}
+
+
+
+/* ------------------- */
+/* Layout              */
+/* ------------------- */
+
+
+/* HERO SECTION        */
+
+.heroSection{
+background:  #f9f9ff none repeat scroll 0% 0% / auto padding-box border-box;
+padding: 9rem 0px;
+}
+
+.heroBox{
+    flex-direction: column;
+    --gap:5rem;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.heroleftBox{
+    flex-direction: column;
+    --gap:2rem;
+    align-items: center;
+}
+
+.heroHeading{
+font-weight: 700;
+font-size: 56px;
+}
+
+
+/* MEDIA QUERY       */
+
+@media (min-width: 35em) {
+    .heroBox{
+        flex-direction: column;
+        --gap:6rem;
+        padding: 0 2rem;
+        text-align: center;
+    }
+    .heroleftBox{
+        flex-direction: column;
+        --gap:2rem;
+        align-items: center;
+    }
+
+    .domainSection{
+        padding-inline: 2rem;
+    }
+        
+    .domainListedBox{
+        flex-direction: column;
+        --gap:5rem;
+        padding: 0 2rem;
+    }
+    
+    
+}
+
+@media (min-width: 50rem) {
+    .heroBox{
+        flex-direction: row;
+        --gap:1rem;
+       justify-content: space-evenly;
+       align-items: center;
+        text-align: left;
+    }
+    .heroleftBox{
+        flex-direction: column;
+        --gap:2rem;
+        align-items: flex-start;
+    }
+    .heroHeading{
+        font-weight: 700;
+        font-size: 64px;
+        width: 13ch;
+    }
+    .Para{
+        max-width: 500px;
+    }
+    .heroImage{
+        min-width: 220px;
+        max-width: 600px;
+    }
+     
+}
