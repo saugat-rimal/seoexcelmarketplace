@@ -6,8 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="navigation.js" defer></script>
   </head>
   <body>
+    <header class="primary-header flex">
+      <div>
+        <img src="" alt="SEO Excel" class="logo" />
+      </div>
+      <button class="mobile-nav-toggle" aria-controls="primary-navigation">
+        <span class="sr-only" aria-expanded="false">Menu</span>
+      </button>
+      <nav>
+        <ul
+          id="primary-navigation"
+          data-visible="false"
+          class="primary-navigation underline-indicators flex"
+        >
+          <li class="active">
+            <a
+              class="ff-sans-cond uppercase text-dark letter-spacing-2"
+              href="index.html"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              class="ff-sans-cond uppercase text-dark letter-spacing-2"
+              href="destination.html"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              class="ff-sans-cond uppercase text-dark letter-spacing-2"
+              href="crew.html"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a
+              class="ff-sans-cond uppercase text-dark letter-spacing-2"
+              href="technology.html"
+              >Terms</a
+            >
+          </li>
+          <li>
+            <a
+              class="ff-sans-cond uppercase text-dark letter-spacing-2"
+              href="technology.html"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
     <section class="heroSection">
       <div class="flex heroBox">
         <div class="heroleftBox flex">
